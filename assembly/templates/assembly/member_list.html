@@ -1,0 +1,13 @@
+<table style="border:1px solid blue;">
+    <tr>
+    {% for member in member_list %}
+    <td>
+    {{ member }}
+    {% if forloop.counter|divisibleby:10 %} 
+    </td></tr><tr>
+    {% else %}
+    </td>
+    {% endif %}
+{% endfor %}
+</tr>
+</table>
