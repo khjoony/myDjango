@@ -19,7 +19,7 @@ class KrName():
     """
     KrName
     """
-    NAMES = []
+    KR_NAMES = []
     MEMBER_IDS = []
     for member_tag in SOUP.select('.memberna_list dl dt a'):
         link = member_tag['href']
@@ -29,9 +29,9 @@ class KrName():
             member_id = matched.group(0)
         else:
             member_id = None
-        NAMES.append(name)
+        KR_NAMES.append(name)
         MEMBER_IDS.append(member_id)
-        print(NAMES, MEMBER_IDS)
+        ## print(NAMES, MEMBER_IDS)
 class ChiName():
     """
     ChiName
@@ -46,7 +46,7 @@ class ChiName():
         else:
             chi_name = None
         CHI_NAMES.append(chi_name)
-        print(CHI_NAMES)
+        ## print(CHI_NAMES)
 class EnName():
     """
     EnName
@@ -60,4 +60,4 @@ class EnName():
         else:
             en_name = None
         EN_NAMES.append(en_name)
-        print(EN_NAMES)
+        ## print(EN_NAMES)

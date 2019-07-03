@@ -9,8 +9,10 @@ django.setup()
 from assembly.models import Member
 
 Q_SET = Member.objects.all()
-_ID = 0
+## print(amK.MEMBER_IDS, amK.KR_NAMES, amC.CHI_NAMES, amE.EN_NAMES)
+_ID = 1
 for chi_name in amC.CHI_NAMES:
-    Q_SET[_ID].chi_name = chi_name
-    Q_SET[_ID].save()
+    member_instance = Member.objects.get(id=_ID)
+    member_instance.chi_name = chi_name
+    member_instance.save()
     _ID += 1
