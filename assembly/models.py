@@ -11,8 +11,10 @@ class Member(models.Model):
     """
     objects = models.Manager()
     id = models.AutoField(primary_key=True)
+    membership_id = models.CharField(max_length=20, null=True)
     name = models.CharField(max_length=20)
     chi_name = models.CharField(max_length=20, null=True)
+    en_name = models.CharField(max_length=20, null=True)
 
     def  to_dict(self):
         """
@@ -20,8 +22,10 @@ class Member(models.Model):
         """
         return{
             'id' : self.id,
+            'membership_id' : self.membership_id,
             'name': self.name,
             'chi_name' : self.chi_name,
+            'en_name' : self.en_name,
         }
     def __str__(self):
         return self.name
@@ -31,7 +35,7 @@ class Question(models.Model):
         test
     """
     id = models.AutoField(primary_key=True)
-    question_text = models.CharField(max_length=200)
+    question_text = models.CharField(max_length=20)
     pub_date = models.DateTimeField('date published')
     ## Expression of Object
     def __str__(self):
